@@ -1,4 +1,4 @@
-package com.insplore.jun.capturetag;
+package com.insplore.jun.capturelog;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

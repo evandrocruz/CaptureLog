@@ -1,8 +1,8 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.insplore.jun.capturetag.SessionSettings">
+    tools:context="com.insplore.jun.capturelog.SessionSettings">
 
     <TextView android:id="@+id/session_about"
         android:layout_width="wrap_content"
@@ -10,23 +10,56 @@
         android:layout_centerHorizontal="true"
         android:text="@string/session_about" />
 
-    <EditText
-        android:layout_width="wrap_content"
+    <EditText android:id="@+id/session_edittext"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/session_about"/>
+        android:layout_below="@+id/session_about"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"/>
 
     <TextView android:id="@+id/session_text_sound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/session_edittext"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:text="@string/session_text_sound" />
+
+    <TextView android:id="@+id/session_text_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/session_text_sound"
+        android:layout_marginLeft="20dp"
+        android:text="@string/button_text" />
+
+    <TextView android:id="@+id/session_sound_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/session_text_sound"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:text="@string/button_sound" />
 
     <ToggleButton android:id="@+id/session_text_togglebutton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/session_text_label"
+        android:textOn="Yes"
+        android:textOff="No"/>
 
     <ToggleButton android:id="@+id/session_sound_togglebutton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/session_sound_label"
+        android:layout_alignParentRight="true"
+        android:textOn="Yes"
+        android:textOff="No"/>
 
-</FrameLayout>
+    <Button android:id="@+id/start_session_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:textSize="20sp"
+        android:text="@string/capture"/>
+
+</RelativeLayout>
