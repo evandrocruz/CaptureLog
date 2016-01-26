@@ -1,4 +1,4 @@
-package com.insplore.jun.capturetag;
+package com.insplore.jun.capturelog;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -12,7 +12,7 @@ public class Log extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tags);
+        setContentView(R.layout.activity_log);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

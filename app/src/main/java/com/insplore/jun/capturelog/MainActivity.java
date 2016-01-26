@@ -1,4 +1,4 @@
-package com.insplore.jun.capturetag;
+package com.insplore.jun.capturelog;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        //Buttons and ClickListeners
         Button captureButton = (Button)this.findViewById(R.id.button_capture);
         captureButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,14 +39,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button tagsButton = (Button)this.findViewById(R.id.button_tags);
-        tagsButton.setOnClickListener(new View.OnClickListener() {
+        Button logButton = (Button)this.findViewById(R.id.button_logs);
+        logButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent tagsIntent = new Intent(v.getContext(), Log.class);
-                startActivity(tagsIntent);
+                Intent logIntent = new Intent(v.getContext(), Log.class);
+                startActivity(logIntent);
             }
         });
+
     }
 
     @Override
