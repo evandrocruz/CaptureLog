@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 
@@ -28,9 +30,14 @@ public class SessionSettings extends Fragment implements View.OnClickListener{
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    private static final String ARG_INPUT_TEXT = "input_text";
+    private static final String ARG_INPUT_SOUND = "input_sound";
+    private static final String ARG_CATEGORY = "category";
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -72,13 +79,9 @@ public class SessionSettings extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_session_settings, container, false);
 
-
         ToggleButton toggleText = (ToggleButton) getActivity().findViewById(R.id.session_text_togglebutton);
         ToggleButton toggleSound = (ToggleButton) getActivity().findViewById(R.id.session_sound_togglebutton);
 
-
-
-        //Buttons and ClickListeners
         Button startSessionButton = (Button) view.findViewById(R.id.start_session_button);
         startSessionButton.setOnClickListener(this);
 
@@ -116,13 +119,24 @@ public class SessionSettings extends Fragment implements View.OnClickListener{
 
     public void onClick(View v) {
         Fragment captureSessionFragment = new CaptureSession();
-
         FragmentManager fragmentManager = getFragmentManager();
 
+        //Get the elements and data
+        ToggleButton toggleText = (ToggleButton) getActivity().findViewById(R.id.session_text_togglebutton);
+        ToggleButton toggleSound = (ToggleButton) getActivity().findViewById(R.id.session_sound_togglebutton);
+        EditText sessionCategory = (EditText) getActivity().findViewById(R.id.session_edittext);
+        String sessionCategoryText = sessionCategory.getText().toString();
+
+        //Set arguments for next fragment
+        Bundle args = new Bundle();
+        args.putString(ARG_CATEGORY, sessionCategoryText );
+        args.putBoolean(ARG_INPUT_TEXT, toggleText.isChecked());
+        args.putBoolean(ARG_INPUT_SOUND, toggleSound.isChecked());
+        captureSessionFragment.setArguments(args);
+
+        //Fragment transactions
         FragmentTransaction fragTransaction = fragmentManager.beginTransaction();
-
-        fragTransaction.replace(R.id.session_settings_fragment, captureSessionFragment);
-
+        fragTransaction.replace(R.id.session_fragment, captureSessionFragment);
         fragTransaction.addToBackStack(null);
         fragTransaction.commit();
     }

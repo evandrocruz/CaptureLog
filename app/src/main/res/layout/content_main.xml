@@ -24,5 +24,5 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_capture"
         android:textSize="20sp"
-        android:text="@string/tags" />
+        android:text="@string/logs" />
 </RelativeLayout>

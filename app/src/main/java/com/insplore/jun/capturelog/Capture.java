@@ -31,7 +31,7 @@ public class Capture extends AppCompatActivity implements SessionSettings.OnFrag
 
         Fragment sessionSettingsFragment = new SessionSettings();
         FragmentTransaction fragTransaction = getSupportFragmentManager().beginTransaction();
-        fragTransaction.add(R.id.session_settings_fragment, sessionSettingsFragment).commit();
+        fragTransaction.add(R.id.session_fragment, sessionSettingsFragment).commit();
 
     }
 
