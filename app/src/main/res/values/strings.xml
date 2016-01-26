@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Capture Tag</string>
+    <string name="action_settings">Settings</string>
+    <string name="capture">Capture</string>
+    <string name="tags">Tags</string>
+    <string name="title_activity_capture">Capture</string>
+    <string name="title_activity_tags">Tags and Stats</string>
+    <string name="session_about">What's this session about?</string>
+    <string name="session_text_sound">Do you want to record text, sound, or both?</string>
+    <string name="button_text">Text</string>
+    <string name="button_sound">Sound</string>
+    <string name="button_both">Both</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
